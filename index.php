@@ -13,8 +13,7 @@ if ($handle) {
     while (($line = fgets($handle)) !== false) {
 
         if (preg_match("/^([a-z0-9-]{36})$/", $line, $matches)) {
-            $length = 74;
-            $gpid_total_length = $gpid_total_length + $length;
+            $gpid_total_length = $gpid_total_length + 74;
 
             if (file_exists($gpid_file) !== true) {
                 $gpid_handle = fopen($gpid_file, "a");
@@ -39,8 +38,7 @@ if ($handle) {
         }
 
         if (preg_match("/^([A-Z0-9-]{36})$/", $line, $matches)) {
-                $length = 74;
-                $idfa_total_length = $idfa_total_length + $length;
+            $idfa_total_length = $idfa_total_length + 74;
 
             if (file_exists($idfa_file) === false) {
                 $idfa_handle = fopen($idfa_file, "a");
